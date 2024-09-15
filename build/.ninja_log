@@ -1,0 +1,14 @@
+# ninja log v5
+1	18	1726358786057551896	include/Mini/MiniOps.h.inc	25c5f43b25e6b74e
+1	18	1726358786057551896	/home/veronia/SEMRON-task/build/include/Mini/MiniOps.h.inc	25c5f43b25e6b74e
+1	18	1726358786057551896	include/Mini/MiniOps.cpp.inc	e50c9021fb1abdcc
+1	18	1726358786057551896	/home/veronia/SEMRON-task/build/include/Mini/MiniOps.cpp.inc	e50c9021fb1abdcc
+1	18	1726358786057551896	include/Mini/MiniOpsDialect.cpp.inc	59d64ed81a3777e9
+1	18	1726358786057551896	/home/veronia/SEMRON-task/build/include/Mini/MiniOpsDialect.cpp.inc	59d64ed81a3777e9
+2	18	1726358786057551896	include/Mini/MiniOpsDialect.h.inc	a82fa9cad75bccf3
+2	18	1726358786057551896	/home/veronia/SEMRON-task/build/include/Mini/MiniOpsDialect.h.inc	a82fa9cad75bccf3
+18	1899	1726358787945567484	lib/Mini/CMakeFiles/MiniDialect.dir/MiniOps.cpp.o	f8f9d3eaf2c747d4
+18	1922	1726358787969567683	lib/Mini/CMakeFiles/MiniDialect.dir/MiniDialect.cpp.o	53fa45bcb346d468
+1922	1984	1726358788029568178	lib/Mini/libMiniDialect.a	f6468ac943cf6f6f
+18	22863	1726358808909741399	tools/mini-opt/CMakeFiles/mini-opt.dir/mini-opt.cpp.o	e8d49154873ed98f
+22864	23520	1726358809553746765	bin/mini-opt	6ca36c5f232cbcfe
