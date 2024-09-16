@@ -1,4 +1,5 @@
 include/Mini/include/Mini/MiniOpsDialect.cpp.inc: \
+  ../include/Mini/ShapeInferenceInterface.td \
   /home/veronia/llvm-project/mlir/include/mlir/IR/AttrTypeBase.td \
   /home/veronia/llvm-project/mlir/include/mlir/IR/CommonAttrConstraints.td \
   /home/veronia/llvm-project/mlir/include/mlir/IR/CommonTypeConstraints.td \
@@ -13,4 +14,5 @@ include/Mini/include/Mini/MiniOpsDialect.cpp.inc: \
   /home/veronia/llvm-project/mlir/include/mlir/Interfaces/CallInterfaces.td \
   /home/veronia/llvm-project/mlir/include/mlir/Interfaces/FunctionInterfaces.td \
   /home/veronia/llvm-project/mlir/include/mlir/Interfaces/SideEffectInterfaceBase.td \
-  /home/veronia/llvm-project/mlir/include/mlir/Interfaces/SideEffectInterfaces.td
+  /home/veronia/llvm-project/mlir/include/mlir/Interfaces/SideEffectInterfaces.td \
+  /home/veronia/llvm-project/mlir/include/mlir/Interfaces/TilingInterface.td

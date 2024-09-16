@@ -11,3 +11,6 @@ cmake -G Ninja .. \
 # Build the project
 ninja
 
+./bin/mini-opt ../test/mini-example.mlir -o output.mlir
+cat output.mlir 
+

@@ -1,19 +1,26 @@
+# Create the MiniDialect library
 add_library(MiniDialect
   MiniDialect.cpp
   MiniOps.cpp
 )
 
+# Ensure that the generated headers are found during compilation
 target_include_directories(MiniDialect PRIVATE
   ${CMAKE_CURRENT_BINARY_DIR}/../../include
   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
+  ${MLIR_BINARY_DIR}/include
+  ${MLIR_SOURCE_DIR}/include
 )
 
+# Add the TableGen dependencies here (no circular dependencies)
 add_dependencies(MiniDialect
   MLIRMiniOpsIncGen
 )
 
+# Link the required MLIR components for your dialect
 target_link_libraries(MiniDialect
-  MLIRIR
-  MLIRSideEffectInterfaces  # Include required MLIR libraries
+  MLIRIR                        # Core MLIR functionality
+  #MLIRSideEffectInterfaces       # Include SideEffectInterfaces for memory effect management
+  MLIRTilingInterface            # Link the Tiling Interface for operation tiling
 )
 

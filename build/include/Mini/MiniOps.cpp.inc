@@ -209,6 +209,9 @@ void AddOp::print(::mlir::OpAsmPrinter &_odsPrinter) {
   }
 }
 
+void AddOp::getEffects(::llvm::SmallVectorImpl<::mlir::SideEffects::EffectInstance<::mlir::MemoryEffects::Effect>> &effects) {
+}
+
 } // namespace mini
 } // namespace mlir
 MLIR_DEFINE_EXPLICIT_TYPE_ID(::mlir::mini::AddOp)
@@ -384,6 +387,9 @@ void MatMulOp::print(::mlir::OpAsmPrinter &_odsPrinter) {
    else
      _odsPrinter << type;
   }
+}
+
+void MatMulOp::getEffects(::llvm::SmallVectorImpl<::mlir::SideEffects::EffectInstance<::mlir::MemoryEffects::Effect>> &effects) {
 }
 
 } // namespace mini

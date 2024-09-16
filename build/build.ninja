@@ -159,6 +159,12 @@ build include/Mini/MLIRMiniOpsIncGen: phony include/Mini/CMakeFiles/MLIRMiniOpsI
 
 
 #############################################
+# Utility command for MLIRTilingInterfaceIncGen
+
+build include/Mini/MLIRTilingInterfaceIncGen: phony include/Mini/CMakeFiles/MLIRTilingInterfaceIncGen include/Mini/MiniOps.cpp.inc include/Mini/MiniOps.h.inc include/Mini/MiniOpsDialect.cpp.inc include/Mini/MiniOpsDialect.h.inc include/Mini/SideEffectInterfaces.cpp.inc include/Mini/SideEffectInterfaces.h.inc include/Mini/TilingInterface.cpp.inc include/Mini/TilingInterface.h.inc include/Mini/MLIRMiniOpsIncGen
+
+
+#############################################
 # Utility command for edit_cache
 
 build include/Mini/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
@@ -226,6 +232,52 @@ build include/Mini/MiniOpsDialect.h.inc | ${cmake_ninja_workdir}include/Mini/Min
   depfile = /home/veronia/SEMRON-task/build/CMakeFiles/d/1524f2f58a809902287f01250c6ae471818bf84a01376553c3cd79ac185d0a17.d
   restat = 1
 
+
+#############################################
+# Phony custom command for include/Mini/CMakeFiles/MLIRTilingInterfaceIncGen
+
+build include/Mini/CMakeFiles/MLIRTilingInterfaceIncGen | ${cmake_ninja_workdir}include/Mini/CMakeFiles/MLIRTilingInterfaceIncGen: phony include/Mini/MiniOps.h.inc include/Mini/MiniOps.h.inc include/Mini/MiniOps.cpp.inc include/Mini/MiniOps.cpp.inc include/Mini/MiniOpsDialect.h.inc include/Mini/MiniOpsDialect.h.inc include/Mini/MiniOpsDialect.cpp.inc include/Mini/MiniOpsDialect.cpp.inc include/Mini/TilingInterface.h.inc include/Mini/TilingInterface.h.inc include/Mini/TilingInterface.cpp.inc include/Mini/TilingInterface.cpp.inc include/Mini/SideEffectInterfaces.h.inc include/Mini/SideEffectInterfaces.h.inc include/Mini/SideEffectInterfaces.cpp.inc include/Mini/SideEffectInterfaces.cpp.inc || include/Mini/MLIRMiniOpsIncGen
+
+
+#############################################
+# Custom command for include/Mini/SideEffectInterfaces.cpp.inc
+
+build include/Mini/SideEffectInterfaces.cpp.inc | ${cmake_ninja_workdir}include/Mini/SideEffectInterfaces.cpp.inc: CUSTOM_COMMAND /home/veronia/llvm-project/build/bin/mlir-tblgen ../include/Mini/MiniOps.td || include/Mini/MLIRMiniOpsIncGen
+  COMMAND = cd /home/veronia/SEMRON-task/build && /home/veronia/llvm-project/build/bin/mlir-tblgen -gen-op-interface-defs -I /home/veronia/SEMRON-task/include/Mini -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include /home/veronia/SEMRON-task/include/Mini/MiniOps.td --write-if-changed -o include/Mini/SideEffectInterfaces.cpp.inc -d include/Mini/SideEffectInterfaces.cpp.inc.d && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/veronia/SEMRON-task /home/veronia/SEMRON-task/include/Mini /home/veronia/SEMRON-task/build /home/veronia/SEMRON-task/build/include/Mini /home/veronia/SEMRON-task/build/include/Mini/SideEffectInterfaces.cpp.inc.d /home/veronia/SEMRON-task/build/CMakeFiles/d/ed5af8f36031e3b04c1156982bf18bab0e2b14a02152701ad171268a656752d9.d
+  DESC = Building SideEffectInterfaces.cpp.inc...
+  depfile = /home/veronia/SEMRON-task/build/CMakeFiles/d/ed5af8f36031e3b04c1156982bf18bab0e2b14a02152701ad171268a656752d9.d
+  restat = 1
+
+
+#############################################
+# Custom command for include/Mini/SideEffectInterfaces.h.inc
+
+build include/Mini/SideEffectInterfaces.h.inc | ${cmake_ninja_workdir}include/Mini/SideEffectInterfaces.h.inc: CUSTOM_COMMAND /home/veronia/llvm-project/build/bin/mlir-tblgen ../include/Mini/MiniOps.td || include/Mini/MLIRMiniOpsIncGen
+  COMMAND = cd /home/veronia/SEMRON-task/build && /home/veronia/llvm-project/build/bin/mlir-tblgen -gen-op-interface-decls -I /home/veronia/SEMRON-task/include/Mini -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include /home/veronia/SEMRON-task/include/Mini/MiniOps.td --write-if-changed -o include/Mini/SideEffectInterfaces.h.inc -d include/Mini/SideEffectInterfaces.h.inc.d && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/veronia/SEMRON-task /home/veronia/SEMRON-task/include/Mini /home/veronia/SEMRON-task/build /home/veronia/SEMRON-task/build/include/Mini /home/veronia/SEMRON-task/build/include/Mini/SideEffectInterfaces.h.inc.d /home/veronia/SEMRON-task/build/CMakeFiles/d/ce0f24aaa16a09f923edd59b3cfb664da57cc723476dbaebfaedb00186669904.d
+  DESC = Building SideEffectInterfaces.h.inc...
+  depfile = /home/veronia/SEMRON-task/build/CMakeFiles/d/ce0f24aaa16a09f923edd59b3cfb664da57cc723476dbaebfaedb00186669904.d
+  restat = 1
+
+
+#############################################
+# Custom command for include/Mini/TilingInterface.cpp.inc
+
+build include/Mini/TilingInterface.cpp.inc | ${cmake_ninja_workdir}include/Mini/TilingInterface.cpp.inc: CUSTOM_COMMAND /home/veronia/llvm-project/build/bin/mlir-tblgen ../include/Mini/MiniOps.td || include/Mini/MLIRMiniOpsIncGen
+  COMMAND = cd /home/veronia/SEMRON-task/build && /home/veronia/llvm-project/build/bin/mlir-tblgen -gen-op-interface-defs -I /home/veronia/SEMRON-task/include/Mini -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include /home/veronia/SEMRON-task/include/Mini/MiniOps.td --write-if-changed -o include/Mini/TilingInterface.cpp.inc -d include/Mini/TilingInterface.cpp.inc.d && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/veronia/SEMRON-task /home/veronia/SEMRON-task/include/Mini /home/veronia/SEMRON-task/build /home/veronia/SEMRON-task/build/include/Mini /home/veronia/SEMRON-task/build/include/Mini/TilingInterface.cpp.inc.d /home/veronia/SEMRON-task/build/CMakeFiles/d/1c4cb3ade6726ce95738ac622de7822ae43bea4120274d7b43d9446259ffe85e.d
+  DESC = Building TilingInterface.cpp.inc...
+  depfile = /home/veronia/SEMRON-task/build/CMakeFiles/d/1c4cb3ade6726ce95738ac622de7822ae43bea4120274d7b43d9446259ffe85e.d
+  restat = 1
+
+
+#############################################
+# Custom command for include/Mini/TilingInterface.h.inc
+
+build include/Mini/TilingInterface.h.inc | ${cmake_ninja_workdir}include/Mini/TilingInterface.h.inc: CUSTOM_COMMAND /home/veronia/llvm-project/build/bin/mlir-tblgen ../include/Mini/MiniOps.td || include/Mini/MLIRMiniOpsIncGen
+  COMMAND = cd /home/veronia/SEMRON-task/build && /home/veronia/llvm-project/build/bin/mlir-tblgen -gen-op-interface-decls -I /home/veronia/SEMRON-task/include/Mini -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include /home/veronia/SEMRON-task/include/Mini/MiniOps.td --write-if-changed -o include/Mini/TilingInterface.h.inc -d include/Mini/TilingInterface.h.inc.d && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/veronia/SEMRON-task /home/veronia/SEMRON-task/include/Mini /home/veronia/SEMRON-task/build /home/veronia/SEMRON-task/build/include/Mini /home/veronia/SEMRON-task/build/include/Mini/TilingInterface.h.inc.d /home/veronia/SEMRON-task/build/CMakeFiles/d/c0d2e206772a911dadfa16a918dfc58c12106107fc9a2d8036808f21ea35e60e.d
+  DESC = Building TilingInterface.h.inc...
+  depfile = /home/veronia/SEMRON-task/build/CMakeFiles/d/c0d2e206772a911dadfa16a918dfc58c12106107fc9a2d8036808f21ea35e60e.d
+  restat = 1
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # /home/veronia/SEMRON-task/CMakeLists.txt
@@ -272,7 +324,7 @@ build lib/Mini/CMakeFiles/MiniDialect.dir/MiniDialect.cpp.o: CXX_COMPILER__MiniD
   DEFINES = -D_DEBUG -D_GLIBCXX_ASSERTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
   DEP_FILE = lib/Mini/CMakeFiles/MiniDialect.dir/MiniDialect.cpp.o.d
   FLAGS = -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections   -D_DEBUG -D_GLIBCXX_ASSERTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -UNDEBUG
-  INCLUDES = -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include -I/home/veronia/SEMRON-task/build/lib/Mini/../../include -I/home/veronia/SEMRON-task/lib/Mini/../../include
+  INCLUDES = -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include -I/home/veronia/SEMRON-task/build/lib/Mini/../../include -I/home/veronia/SEMRON-task/lib/Mini/../../include -I/include
   OBJECT_DIR = lib/Mini/CMakeFiles/MiniDialect.dir
   OBJECT_FILE_DIR = lib/Mini/CMakeFiles/MiniDialect.dir
   TARGET_COMPILE_PDB = lib/Mini/CMakeFiles/MiniDialect.dir/MiniDialect.pdb
@@ -282,7 +334,7 @@ build lib/Mini/CMakeFiles/MiniDialect.dir/MiniOps.cpp.o: CXX_COMPILER__MiniDiale
   DEFINES = -D_DEBUG -D_GLIBCXX_ASSERTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
   DEP_FILE = lib/Mini/CMakeFiles/MiniDialect.dir/MiniOps.cpp.o.d
   FLAGS = -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections   -D_DEBUG -D_GLIBCXX_ASSERTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -UNDEBUG
-  INCLUDES = -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include -I/home/veronia/SEMRON-task/build/lib/Mini/../../include -I/home/veronia/SEMRON-task/lib/Mini/../../include
+  INCLUDES = -I/home/veronia/llvm-project/llvm/include -I/home/veronia/llvm-project/build/include -I/home/veronia/llvm-project/mlir/include -I/home/veronia/llvm-project/build/tools/mlir/include -I/home/veronia/SEMRON-task/include -I/home/veronia/SEMRON-task/build/include -I/home/veronia/SEMRON-task/build/lib/Mini/../../include -I/home/veronia/SEMRON-task/lib/Mini/../../include -I/include
   OBJECT_DIR = lib/Mini/CMakeFiles/MiniDialect.dir
   OBJECT_FILE_DIR = lib/Mini/CMakeFiles/MiniDialect.dir
   TARGET_COMPILE_PDB = lib/Mini/CMakeFiles/MiniDialect.dir/MiniDialect.pdb
@@ -427,6 +479,8 @@ build tools/mini-opt/rebuild_cache: phony tools/mini-opt/CMakeFiles/rebuild_cach
 # Target aliases.
 
 build MLIRMiniOpsIncGen: phony include/Mini/MLIRMiniOpsIncGen
+
+build MLIRTilingInterfaceIncGen: phony include/Mini/MLIRTilingInterfaceIncGen
 
 build MiniDialect: phony lib/Mini/libMiniDialect.a
 
