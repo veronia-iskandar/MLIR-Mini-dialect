@@ -15,6 +15,9 @@ target_link_libraries(mini-opt PRIVATE
   MLIRDialect
   MLIRFuncDialect
   MLIRArithDialect
+  MLIRFuncDialect
+  MLIRLinalgDialect
+  MLIRSCFDialect
 )
 
 mlir_check_all_link_libraries(mini-opt)

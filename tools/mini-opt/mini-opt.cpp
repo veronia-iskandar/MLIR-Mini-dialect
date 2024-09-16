@@ -15,9 +15,14 @@
 #include "mlir/IR/DialectRegistry.h"
 #include "mlir/Parser/Parser.h"
 #include "mlir/Support/LogicalResult.h"
+#include "Mini/TileMiniOpsPass.h"
+#include "Mini/Passes.h" 
 
 
 int main(int argc, char **argv) {
+  mlir::registerAllPasses();
+  mlir::mini::registerTileMiniOpsPass(); 
+  
   mlir::DialectRegistry registry;
   // Register the Func dialect
   registry.insert<mlir::func::FuncDialect>();

@@ -9,7 +9,7 @@
 #include "mlir/IR/Builders.h"
 #include "mlir/IR/OpImplementation.h" 
 #include "mlir/Interfaces/TilingInterface.h"
-#include "Mini/ShapeInferenceInterface.h"
+//#include "Mini/ShapeInferenceInterface.h"
 #include "mlir/Dialect/Tensor/IR/Tensor.h"
 #include "mlir/Dialect/Arith/IR/Arith.h" 
 //#include "Mini/TilingInterface.h"

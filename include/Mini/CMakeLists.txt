@@ -10,7 +10,7 @@ mlir_tablegen(MiniOpsDialect.h.inc -gen-dialect-decls -name MiniDialect)
 mlir_tablegen(MiniOpsDialect.cpp.inc -gen-dialect-defs -name MiniDialect)
 
 # Add the TableGen target for MiniOps
-add_public_tablegen_target(MLIRMiniOpsIncGen)
+#add_public_tablegen_target(MLIRMiniOpsIncGen)
 
 # Ensure TilingInterface and SideEffectInterface are included
 mlir_tablegen(TilingInterface.h.inc -gen-op-interface-decls)
@@ -23,9 +23,12 @@ mlir_tablegen(SideEffectInterfaces.cpp.inc -gen-op-interface-defs)
 add_public_tablegen_target(MLIRTilingInterfaceIncGen)
 #add_public_tablegen_target(MLIRSideEffectInterfacesIncGen)
 
-# No cyclic dependencies here, just generate the targets
+# Generate Passes
+mlir_tablegen(Passes.h.inc -gen-pass-decls -name MiniDialect)
+mlir_tablegen(Passes.cpp.inc -gen-pass-decls -name MiniDialect)
 
-
+# Add the TableGen target for MiniOps
+add_public_tablegen_target(MLIRMiniOpsIncGen)
 
 # Define LLVM target definitions for ShapeInferenceInterface
 #set(LLVM_TARGET_DEFINITIONS ShapeInferenceInterface.td)

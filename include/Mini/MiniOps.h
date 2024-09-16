@@ -12,7 +12,7 @@
 #include "mlir/Interfaces/TilingInterface.h"
 //#include "/home/veronia/llvm-project/build/tools/mlir/include/mlir/Interfaces/TilingInterface.h.inc"
 //#include "TilingInterface.h"
-#include "ShapeInferenceInterface.h"
+//#include "ShapeInferenceInterface.h"
 #define GET_OP_CLASSES
 #include "Mini/MiniOps.h.inc"
 

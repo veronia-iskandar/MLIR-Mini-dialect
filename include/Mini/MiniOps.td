@@ -11,8 +11,8 @@ include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/FunctionInterfaces.td"
 include "mlir/IR/SymbolInterfaces.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
-include "ShapeInferenceInterface.td"
 include "mlir/Interfaces/TilingInterface.td"
+include "mlir/Transforms/Passes.td"
 
 // Define the 'mini' dialect in the ODS framework.
 def Mini_Dialect : Dialect {
@@ -114,5 +114,11 @@ def AddOp : Mini_Op<"add",[Pure, DeclareOpInterfaceMethods<TilingInterface,
   ];
 }
 
+def TileMiniOpsPass : Pass<"tile-mini-ops", "func::FuncOp"> {
+  let summary = "Tile mini.matmul and mini.add operations";
+  let description = [{
+    Tile mini.matmul and mini.add operations using the tiling infrastructure.
+  }];
+}
 #endif // MINI_OPS
 

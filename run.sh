@@ -11,6 +11,8 @@ cmake -G Ninja .. \
 # Build the project
 ninja
 
-./bin/mini-opt ../test/mini-example.mlir -o output.mlir
-cat output.mlir 
+./bin/mini-opt ../test/mini-example.mlir -o example-output.mlir
+cat example-output.mlir 
 
+#./bin/mini-opt ../test/tile-mini-ops.mlir --tile-mini-ops -o verify-pass
+#cat verify-pass

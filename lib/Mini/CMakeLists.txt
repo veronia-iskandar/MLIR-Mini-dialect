@@ -2,6 +2,8 @@
 add_library(MiniDialect
   MiniDialect.cpp
   MiniOps.cpp
+  TileMiniOpsPass.cpp
+  Passes.cpp
 )
 
 # Ensure that the generated headers are found during compilation
@@ -20,7 +22,10 @@ add_dependencies(MiniDialect
 # Link the required MLIR components for your dialect
 target_link_libraries(MiniDialect
   MLIRIR                        # Core MLIR functionality
-  #MLIRSideEffectInterfaces       # Include SideEffectInterfaces for memory effect management
-  MLIRTilingInterface            # Link the Tiling Interface for operation tiling
+  MLIRLinalgDialect                    # Linalg dialect for tiling
+  MLIRSCFDialect                       # SCF dialect
+  MLIRTransforms                # Transforms like tiling
+  MLIRFuncDialect                      # Func dialect
+  MLIRTilingInterface           # Tiling interface 
 )
 
