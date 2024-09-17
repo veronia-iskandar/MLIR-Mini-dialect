@@ -14,5 +14,5 @@ ninja
 ./bin/mini-opt ../test/mini-example.mlir -o example-output.mlir
 cat example-output.mlir 
 
-#./bin/mini-opt ../test/tile-mini-ops.mlir --tile-mini-ops -o verify-pass
-#cat verify-pass
+./bin/mini-opt ../test/tile-mini-ops.mlir --tile-mini-ops -o verify-pass
+cat verify-pass

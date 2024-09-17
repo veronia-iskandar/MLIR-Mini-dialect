@@ -21,15 +21,15 @@
 
 int main(int argc, char **argv) {
   mlir::registerAllPasses();
-  mlir::mini::registerTileMiniOpsPass(); 
-  
   mlir::DialectRegistry registry;
   // Register the Func dialect
   registry.insert<mlir::func::FuncDialect>();
   // Register the Arith dialect
   registry.insert<mlir::arith::ArithDialect>();
+  mlir::mini::registerTileMiniOpsPass(); 
   // Register the Mini dialect
   registry.insert<mlir::mini::MiniDialect>();
+
   return mlir::asMainReturnCode(
       mlir::MlirOptMain(argc, argv, "Mini optimizer driver\n", registry));
 }
