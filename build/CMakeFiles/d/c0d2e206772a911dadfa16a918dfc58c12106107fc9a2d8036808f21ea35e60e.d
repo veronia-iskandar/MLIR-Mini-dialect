@@ -1,4 +1,5 @@
 include/Mini/include/Mini/TilingInterface.h.inc: \
+  /home/veronia/llvm-project/mlir/include/mlir/Dialect/Bufferization/IR/BufferizableOpInterface.td \
   /home/veronia/llvm-project/mlir/include/mlir/IR/AttrTypeBase.td \
   /home/veronia/llvm-project/mlir/include/mlir/IR/CommonAttrConstraints.td \
   /home/veronia/llvm-project/mlir/include/mlir/IR/CommonTypeConstraints.td \

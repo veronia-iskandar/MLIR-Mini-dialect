@@ -13,6 +13,7 @@ include "mlir/IR/SymbolInterfaces.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 include "mlir/Interfaces/TilingInterface.td"
 include "mlir/Transforms/Passes.td"
+include "mlir/Dialect/Bufferization/IR/BufferizableOpInterface.td"
 
 // Define the 'mini' dialect in the ODS framework.
 def Mini_Dialect : Dialect {
@@ -32,11 +33,12 @@ class Mini_Op<string mnemonic, list<Trait> traits = []> :
 // MatMulOp
 //===----------------------------------------------------------------------===//
 
-def MatMulOp : Mini_Op<"matmul",[Pure, DeclareOpInterfaceMethods<TilingInterface,
+def MatMulOp : Mini_Op<"matmul",[Pure, DeclareOpInterfaceMethods<BufferizableOpInterface,["bufferize","isWritable"]>, DeclareOpInterfaceMethods<TilingInterface,
       ["getIterationDomain",
        "getLoopIteratorTypes",
        "getResultTilePosition",
-       "getTiledImplementation"]> ]> {
+       "getTiledImplementation"]>,
+        ]> {
   let summary = "Matrix multiplication operation";
   let description = [{
     Performs matrix multiplication on two input tensors.
@@ -75,7 +77,7 @@ def MatMulOp : Mini_Op<"matmul",[Pure, DeclareOpInterfaceMethods<TilingInterface
 // AddOp
 //===----------------------------------------------------------------------===//
 
-def AddOp : Mini_Op<"add",[Pure, DeclareOpInterfaceMethods<TilingInterface,
+def AddOp : Mini_Op<"add",[Pure, DeclareOpInterfaceMethods<BufferizableOpInterface>, DeclareOpInterfaceMethods<TilingInterface,
       ["getIterationDomain",
        "getLoopIteratorTypes",
        "getResultTilePosition",

@@ -26,6 +26,7 @@ target_link_libraries(MiniDialect
   MLIRSCFDialect                       # SCF dialect
   MLIRTransforms                # Transforms like tiling
   MLIRFuncDialect                      # Func dialect
-  MLIRTilingInterface           # Tiling interface 
+  MLIRTilingInterface           # Tiling interface
+  MLIRBufferization 
 )
 

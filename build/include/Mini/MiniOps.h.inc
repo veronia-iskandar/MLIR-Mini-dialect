@@ -95,7 +95,7 @@ public:
 
   ::llvm::LogicalResult verify(::mlir::Location loc);
 };
-class AddOp : public ::mlir::Op<AddOp, ::mlir::OpTrait::ZeroRegions, ::mlir::OpTrait::OneResult, ::mlir::OpTrait::OneTypedResult<::mlir::RankedTensorType>::Impl, ::mlir::OpTrait::ZeroSuccessors, ::mlir::OpTrait::NOperands<2>::Impl, ::mlir::OpTrait::OpInvariants, ::mlir::ConditionallySpeculatable::Trait, ::mlir::OpTrait::AlwaysSpeculatableImplTrait, ::mlir::MemoryEffectOpInterface::Trait, ::mlir::TilingInterface::Trait> {
+class AddOp : public ::mlir::Op<AddOp, ::mlir::OpTrait::ZeroRegions, ::mlir::OpTrait::OneResult, ::mlir::OpTrait::OneTypedResult<::mlir::RankedTensorType>::Impl, ::mlir::OpTrait::ZeroSuccessors, ::mlir::OpTrait::NOperands<2>::Impl, ::mlir::OpTrait::OpInvariants, ::mlir::ConditionallySpeculatable::Trait, ::mlir::OpTrait::AlwaysSpeculatableImplTrait, ::mlir::MemoryEffectOpInterface::Trait, ::mlir::bufferization::BufferizableOpInterface::Trait, ::mlir::TilingInterface::Trait> {
 public:
   using Op::Op;
   using Op::print;
@@ -247,7 +247,7 @@ public:
 
   ::llvm::LogicalResult verify(::mlir::Location loc);
 };
-class MatMulOp : public ::mlir::Op<MatMulOp, ::mlir::OpTrait::ZeroRegions, ::mlir::OpTrait::OneResult, ::mlir::OpTrait::OneTypedResult<::mlir::RankedTensorType>::Impl, ::mlir::OpTrait::ZeroSuccessors, ::mlir::OpTrait::NOperands<2>::Impl, ::mlir::OpTrait::OpInvariants, ::mlir::ConditionallySpeculatable::Trait, ::mlir::OpTrait::AlwaysSpeculatableImplTrait, ::mlir::MemoryEffectOpInterface::Trait, ::mlir::TilingInterface::Trait> {
+class MatMulOp : public ::mlir::Op<MatMulOp, ::mlir::OpTrait::ZeroRegions, ::mlir::OpTrait::OneResult, ::mlir::OpTrait::OneTypedResult<::mlir::RankedTensorType>::Impl, ::mlir::OpTrait::ZeroSuccessors, ::mlir::OpTrait::NOperands<2>::Impl, ::mlir::OpTrait::OpInvariants, ::mlir::ConditionallySpeculatable::Trait, ::mlir::OpTrait::AlwaysSpeculatableImplTrait, ::mlir::MemoryEffectOpInterface::Trait, ::mlir::bufferization::BufferizableOpInterface::Trait, ::mlir::TilingInterface::Trait> {
 public:
   using Op::Op;
   using Op::print;
@@ -311,6 +311,8 @@ public:
   static void build(::mlir::OpBuilder &, ::mlir::OperationState &odsState, ::mlir::TypeRange resultTypes, ::mlir::ValueRange operands, ::llvm::ArrayRef<::mlir::NamedAttribute> attributes = {});
   ::llvm::LogicalResult verifyInvariantsImpl();
   ::llvm::LogicalResult verifyInvariants();
+  ::llvm::LogicalResult bufferize(::mlir::RewriterBase &rewriter, const ::mlir::bufferization::BufferizationOptions &options);
+  bool isWritable(::mlir::Value value, const ::mlir::bufferization::AnalysisState &state);
   SmallVector<utils::IteratorType> getLoopIteratorTypes();
   SmallVector<Range> getIterationDomain(OpBuilder &b);
   FailureOr<::mlir::TilingResult> getTiledImplementation(OpBuilder &b, ArrayRef<OpFoldResult>  offsets, ArrayRef<OpFoldResult>  sizes);
